@@ -123,3 +123,16 @@ exports.listUsers = function() {
             exports.sanitizedUser(user)))
         .catch(err => console.error(err));
 };
+
+exports.sanitizedUser = function(user) {
+    return {
+        id: user.username,
+        username: user.username,
+        provider: user.provider,
+        familyName: user.familyName,
+        givenName: user.givenName,
+        middleName: user.middleName,
+        emails: user.emails,
+        photos: user.photos
+    };
+};
